@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.d064989.zeitzonen.timeSet">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="208dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="117dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="48dp"
+        android:onClick="onClick"
+        android:text="-1h"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="90dp"
+        android:layout_marginTop="48dp"
+        android:onClick="onClick"
+        android:text="+1h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+</android.support.constraint.ConstraintLayout>
