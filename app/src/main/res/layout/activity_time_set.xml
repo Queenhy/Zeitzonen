@@ -6,40 +6,104 @@
     android:layout_height="match_parent"
     tools:context="com.example.d064989.zeitzonen.timeSet">
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="208dp"
-        android:layout_height="109dp"
-        android:layout_marginEnd="94dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="117dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/minus"
         android:layout_width="60dp"
         android:layout_height="45dp"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="192dp"
+        android:layout_marginStart="78dp"
         android:onClick="onClick"
         android:text="-1h"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/plus"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginBottom="189dp"
+        android:layout_marginEnd="78dp"
         android:onClick="onClick"
         android:text="+1h"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/minus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/tokyo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="50dp"
+            android:baselineAligned="false"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="Tokyo / +8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioButton
+            android:id="@+id/hanoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Hanoi / +6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tokyo" />
+
+        <RadioButton
+            android:id="@+id/newyork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="New York / -6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hanoi" />
+
+        <RadioButton
+            android:id="@+id/paris"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="Paris / 0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newyork" />
+
+        <RadioButton
+            android:id="@+id/london"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="138dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="London / -1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paris" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="311dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="19dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
 
 </android.support.constraint.ConstraintLayout>
