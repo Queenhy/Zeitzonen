@@ -95,13 +95,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("paris", (int) originalTimes.get("paris"));
             intent.putExtra("london", (int) originalTimes.get("london"));
         }
-        currentTime = time.getText().toString();
 
-        if (!currentTime.isEmpty()) {
             startActivity(intent);
-        } else Toast.makeText(getApplicationContext(), "Bitte wählen Sie eine Zeitzone aus!",
-                Toast.LENGTH_SHORT).show();
-
     }
 
     public void setCurrentTime(String timezone, String city) {
@@ -112,11 +107,11 @@ public class MainActivity extends AppCompatActivity {
         currentTime = c.get(java.util.Calendar.HOUR_OF_DAY) + ":" + c.get(java.util.Calendar.MINUTE) + ":" + c.get(java.util.Calendar.SECOND);
 
         int originalTimeshift = (int) originalTimes.get(city);
-        int plusHours = getIntent().getIntExtra(city, 0);
+        Integer plusHours = getIntent().getIntExtra(city, 0);
 
-        if (plusHours != originalTimeshift) {
+        if (plusHours != 0) {
             plusHours = plusHours - originalTimeshift;
-            c.add(Calendar.HOUR_OF_DAY, +plusHours);
+            c.add(Calendar.HOUR_OF_DAY, plusHours);
             currentTime = c.get(java.util.Calendar.HOUR_OF_DAY) + ":" + c.get(java.util.Calendar.MINUTE) + ":" + c.get(java.util.Calendar.SECOND);
         }
 
